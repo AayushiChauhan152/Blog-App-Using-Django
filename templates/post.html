@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} post {%endblock%}
+
+{% block content %}
+
+<div class="container-custom">
+    <div class="row">
+
+        <div class="col s12 m10">
+            <h3>{{ post.title }}</h3>
+            <p>{{post.cat.title}}</p>
+            <img src="/media/{{post.img}}" class="responsive-img">
+            <br>
+            <p>{{post.content | safe }}</p>
+        </div>
+
+        <div class="col s12 m2">
+            {% for c in category %}
+            <div class="card item" style="margin-left:10px;"> 
+                <div class="img-container">
+                    <img src="/media/{{c.img}}" class="responsive-img" style="padding-top:15px">
+                </div>
+                <div class="card-content"> 
+                    <b>
+                        {{c.title}}
+                    </b>
+                    <p class="truncate">{{c.desc}}</p>
+                    <div class="container center-align mt20">
+                        <a href="/category/{{c.url}}" class="btn bg-primary">View</a>
+                    </div>
+                </div>
+            </div>
+        
+        {% endfor %}
+        </div>
+    
+    </div>
+</div>
+
+{% endblock %}

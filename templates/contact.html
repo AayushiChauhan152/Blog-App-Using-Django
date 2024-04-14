@@ -1,0 +1,46 @@
+
+{% include 'header.html'%}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/static/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+
+<div class="container">
+    <div class="block">
+      <div class="row justify-content-center">
+        {{message}}
+        <div class="col-md-8 col-lg-8 pb-4">
+          <form method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="fname" name>First name</label>
+                  <input type="text" class="form-control" name="fname" id="fname">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="lname">Last name</label>
+                  <input type="text" class="form-control" id="lname" name="lname">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="text-black" for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group mb-5">
+              <label class="text-black" for="message">Message</label>
+              <textarea name="msg" class="form-control" id="message" cols="30" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
